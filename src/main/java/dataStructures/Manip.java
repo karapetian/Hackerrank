@@ -1,9 +1,9 @@
-package DataStructures;
+package dataStructures;
 
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import DataStructures.Linked_1.Node;
+import dataStructures.Linked_1.Node;
 
 public class Manip {
 

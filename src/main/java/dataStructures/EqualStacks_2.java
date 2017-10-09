@@ -1,9 +1,9 @@
-package DataStructures;
+package dataStructures;
 
 import java.util.Scanner;
 import java.util.Stack;
 
-public class EqualStacks {
+public class EqualStacks_2 {
 
 
     public static void main(String[] args) {
@@ -45,12 +45,17 @@ public class EqualStacks {
 		for(int i=0; i<n3; i++){
 			s3.push(h3[i]);
 		}
-
-		boolean notEqual = true;
+		
+		int answer = checkingEquality(s1, sum1, s2, sum2, s3, sum3);
+		System.out.println(answer);
+    }
+    
+ public static int checkingEquality(Stack<Integer> s1,int sum1, Stack<Integer> s2, int sum2, Stack<Integer> s3, int sum3){
+    	boolean notEqual = true;
 		while (notEqual) {
 			if (sum1 == sum2 && sum1 == sum3) {
-				System.out.print(sum1);
-				notEqual = false;
+				return sum1;
+//				notEqual = false;
 			} else if (sum1 >= sum2 && sum1 >= sum3) {
 				sum1 = sum1 - s1.pop();
 				continue;
@@ -61,5 +66,7 @@ public class EqualStacks {
 				sum3 = sum3 - s3.pop();
     			continue;
 		}
+		return sum1;
     }
+    
 }
